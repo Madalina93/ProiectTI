@@ -35,51 +35,49 @@
            <tr>
                <td>Salar Realizat(%) </td>
                <td>
-                   <asp:TextBox ID="salarR" runat="server"></asp:TextBox>
+                   <asp:TextBox ID="salarR" runat="server" Text="100" ></asp:TextBox>
                </td>
            </tr>
 
             <tr>
                <td>Vechime(%) </td>
                <td>
-                   <asp:TextBox ID="vechime" runat="server"></asp:TextBox>
+                   <asp:TextBox ID="vechime" runat="server" Text="0"></asp:TextBox>
                </td>
            </tr>
 
            <tr>
                <td>Spor(%) </td>
                <td>
-                   <asp:TextBox ID="spor" runat="server"></asp:TextBox>
+                   <asp:TextBox ID="spor" runat="server" Text="0"></asp:TextBox>
                </td>
            </tr>
 
            <tr>
                <td>Premii brute: </td>
                <td>
-                   <asp:TextBox ID="premii" runat="server"></asp:TextBox>
+                   <asp:TextBox ID="premii" runat="server" Text="0"></asp:TextBox>
                </td>
            </tr>
 
            <tr>
                <td>Compensatie </td>
                <td>
-                   <asp:TextBox ID="compensatie" runat="server"></asp:TextBox>
+                   <asp:TextBox ID="compensatie" runat="server" Text="0"></asp:TextBox>
                </td>
            </tr>
-
-            
 
            <tr>
                <td>Avans </td>
                <td>
-                   <asp:TextBox ID="avans" runat="server"></asp:TextBox>
+                   <asp:TextBox ID="avans" runat="server" Text="0"></asp:TextBox>
                </td>
            </tr>
 
             <tr>
-               <td>Retineti </td>
+               <td>Retineri </td>
                <td>
-                   <asp:TextBox ID="retineri" runat="server"></asp:TextBox>
+                   <asp:TextBox ID="retineri" runat="server" Text="0"></asp:TextBox>
                </td>
            </tr>
 

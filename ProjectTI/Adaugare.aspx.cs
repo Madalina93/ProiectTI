@@ -27,7 +27,7 @@ namespace ProjectTI.Views
 
 
         protected void adauga_Click(object sender, EventArgs e)
-        {
+            {
              SqlConnection con = new SqlConnection(@"Data Source=MSUTOI-PC;Initial Catalog=Angajati;Integrated Security=True");
            // string sql = "INSERT INTO student (name) values (@name)";
             con.Open();
