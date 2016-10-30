@@ -30,48 +30,135 @@
             </HeaderTemplate>
             <ItemTemplate>
                 <tr>
-                    <td><%# DataBinder.Eval(Container,"DataItem.NrCrt") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.Nume") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.Prenume") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.Functie") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.SalarNegociat") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.SalarRealizat") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.Vechime") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.Spor") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.PremiiBrute") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.Compensatie") %></td>
+                     <td><asp:Label ID="lblNrCrt" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.NrCrt") %>' /></td>
+
+                    <td><asp:Label ID="lblNume" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Nume") %>' />
+                        <asp:TextBox ID="txtNume" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Nume") %>' Visible="false"/>
+                    </td>
+
+                    <td><asp:Label ID="lblPrenume" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Prenume") %>'/>
+                        <asp:TextBox ID="txtPrenume" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Prenume") %>' Visible="false"/>
+                    </td>
+
+                     <td><asp:Label ID="lblFunctie" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Functie") %>'/>
+                        <asp:TextBox ID="txtFunctie" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Functie") %>' Visible="false"/>
+                    </td>
+
+                    <td><asp:Label ID="lblSalarN" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.SalarNegociat") %>'/>
+                        <asp:TextBox ID="txtSalarN" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.SalarNegociat") %>' Visible="false"/>
+                    </td>
+
+                     <td><asp:Label ID="lblSalarR" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.SalarRealizat") %>'/>
+                        <asp:TextBox ID="txtSalarR" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.SalarRealizat") %>' Visible="false"/>
+                    </td>
+
+                     <td><asp:Label ID="lblVechime" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Vechime") %>'/>
+                        <asp:TextBox ID="txtVechime" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Vechime") %>' Visible="false"/>
+                    </td>
+
+                     <td><asp:Label ID="lblSpor" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Spor") %>'/>
+                        <asp:TextBox ID="txtSpor" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Spor") %>' Visible="false"/>
+                    </td>
+
+                     <td><asp:Label ID="lblPremii" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.PremiiBrute") %>'/>
+                        <asp:TextBox ID="txtPremii" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.PremiiBrute") %>' Visible="false"/>
+                    </td>
+
+                     <td><asp:Label ID="lblCompensatie" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Compensatie") %>'/>
+                        <asp:TextBox ID="txtCompensatie" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Compensatie") %>' Visible="false"/>
+                    </td>
+                    
                     <td><%# DataBinder.Eval(Container,"DataItem.TotalBrut") %></td>
                     <td><%# DataBinder.Eval(Container,"DataItem.BrutImpozabil") %></td>
                     <td><%# DataBinder.Eval(Container,"DataItem.Impozit") %></td>
                     <td><%# DataBinder.Eval(Container,"DataItem.CAS") %></td>
                     <td><%# DataBinder.Eval(Container,"DataItem.Somaj") %></td>
                     <td><%# DataBinder.Eval(Container,"DataItem.Sanat") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.Avans") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.Retineri") %></td>
+
+
+                    <td><asp:Label ID="lblAvans" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Avans") %>'/>
+                        <asp:TextBox ID="txtAvans" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Avans") %>' Visible="false"/>
+                    </td>
+
+                    <td><asp:Label ID="lblRetineri" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Retineri") %>'/>
+                        <asp:TextBox ID="txtRetineri" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Retineri") %>' Visible="false"/>
+                    </td>
+
                     <td><%# DataBinder.Eval(Container,"DataItem.RestPlata") %></td>
+                    <td>
+                        <asp:LinkButton ID="lnkEdit" runat="server" OnClick="OnEdit" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "NrCrt") %>'>Editeaza</asp:LinkButton>
+                        <asp:LinkButton Visible="false" ID="lnkUpdate" runat="server" OnClick="OnUpdate" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "NrCrt") %>'>Salveaza</asp:LinkButton>
+                        <asp:LinkButton Visible="false" ID="lnkCancel" runat="server" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "NrCrt") %>'>Anuleaza</asp:LinkButton>
+                        <asp:LinkButton ID="lnkDelete" runat="server" OnClick="OnDelete" OnClientClick='javascript:return confirm("Sunteti siguri ca doriti sa stergeti?")'
+                        CommandArgument='<%# DataBinder.Eval(Container.DataItem, "NrCrt") %>'>Stergere</asp:LinkButton>
+                    </td>
                 </tr>
             </ItemTemplate>
             <AlternatingItemTemplate>
                 <tr style="background-color:#00ff90; ">
-                    <td><%# DataBinder.Eval(Container,"DataItem.NrCrt") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.Nume") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.Prenume") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.Functie") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.SalarNegociat") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.SalarRealizat") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.Vechime") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.Spor") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.PremiiBrute") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.Compensatie") %></td>
+                   
+                    <td><asp:Label ID="lblNrCrt" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.NrCrt") %>' /></td>
+
+                    <td><asp:Label ID="lblNume" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Nume") %>' />
+                        <asp:TextBox ID="txtNume" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Nume") %>' Visible="false"/>
+                    </td>
+
+                    <td><asp:Label ID="lblPrenume" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Prenume") %>'/>
+                        <asp:TextBox ID="txtPrenume" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Prenume") %>' Visible="false"/>
+                    </td>
+
+                     <td><asp:Label ID="lblFunctie" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Functie") %>'/>
+                        <asp:TextBox ID="txtFunctie" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Functie") %>' Visible="false"/>
+                    </td>
+
+                    <td><asp:Label ID="lblSalarN" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.SalarNegociat") %>'/>
+                        <asp:TextBox ID="txtSalarN" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.SalarNegociat") %>' Visible="false"/>
+                    </td>
+
+                     <td><asp:Label ID="lblSalarR" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.SalarRealizat") %>'/>
+                        <asp:TextBox ID="txtSalarR" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.SalarRealizat") %>' Visible="false"/>
+                    </td>
+
+                     <td><asp:Label ID="lblVechime" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Vechime") %>'/>
+                        <asp:TextBox ID="txtVechime" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Vechime") %>' Visible="false"/>
+                    </td>
+
+                     <td><asp:Label ID="lblSpor" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Spor") %>'/>
+                        <asp:TextBox ID="txtSpor" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Spor") %>' Visible="false"/>
+                    </td>
+
+                     <td><asp:Label ID="lblPremii" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.PremiiBrute") %>'/>
+                        <asp:TextBox ID="txtPremii" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.PremiiBrute") %>' Visible="false"/>
+                    </td>
+
+                     <td><asp:Label ID="lblCompensatie" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Compensatie") %>'/>
+                        <asp:TextBox ID="txtCompensatie" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Compensatie") %>' Visible="false"/>
+                    </td>
+                    
                     <td><%# DataBinder.Eval(Container,"DataItem.TotalBrut") %></td>
                     <td><%# DataBinder.Eval(Container,"DataItem.BrutImpozabil") %></td>
                     <td><%# DataBinder.Eval(Container,"DataItem.Impozit") %></td>
                     <td><%# DataBinder.Eval(Container,"DataItem.CAS") %></td>
                     <td><%# DataBinder.Eval(Container,"DataItem.Somaj") %></td>
                     <td><%# DataBinder.Eval(Container,"DataItem.Sanat") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.Avans") %></td>
-                    <td><%# DataBinder.Eval(Container,"DataItem.Retineri") %></td>
+
+
+                    <td><asp:Label ID="lblAvans" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Avans") %>'/>
+                        <asp:TextBox ID="txtAvans" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Avans") %>' Visible="false"/>
+                    </td>
+
+                    <td><asp:Label ID="lblRetineri" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Retineri") %>'/>
+                        <asp:TextBox ID="txtRetineri" runat="server" Text='<%# DataBinder.Eval(Container,"DataItem.Retineri") %>' Visible="false"/>
+                    </td>
+
                     <td><%# DataBinder.Eval(Container,"DataItem.RestPlata") %></td>
+                    <td>
+                        <asp:LinkButton ID="lnkEdit" runat="server" OnClick="OnEdit" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "NrCrt") %>'>Editeaza</asp:LinkButton>
+                        <asp:LinkButton Visible="false" ID="lnkUpdate" runat="server" OnClick="OnUpdate" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "NrCrt") %>'>Salveaza</asp:LinkButton>
+                        <asp:LinkButton Visible="false" ID="lnkCancel" runat="server" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "NrCrt") %>'>Anuleaza</asp:LinkButton>
+                        <asp:LinkButton ID="lnkDelete" runat="server" OnClick="OnDelete" OnClientClick='javascript:return confirm("Sunteti siguri ca doriti sa stergeti?")'
+                        CommandArgument='<%# DataBinder.Eval(Container.DataItem, "NrCrt") %>'>Stergere</asp:LinkButton>
+                    </td>
                 </tr>
             </AlternatingItemTemplate>
         </asp:Repeater>
