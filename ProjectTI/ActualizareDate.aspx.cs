@@ -12,36 +12,36 @@ namespace ProjectTI.Views
 {
     public partial class ActualizareDate : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString); 
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
-        { 
+        {
         }
 
         protected void afiseazaAngajati_Click(object sender, EventArgs e)
         {
 
-      
+
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString); //@"Data Source=MSUTOI-PC;Initial Catalog=Angajati;Integrated Security=True"
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM DateAngajati", con);
-            
-          
-          //SqlDataAdapter da = new SqlDataAdapter(cmd);
-          //DataSet ds = new DataSet();
-          //da.Fill(ds, "DateAngajati");
+
+
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //DataSet ds = new DataSet();
+            //da.Fill(ds, "DateAngajati");
             afiseazaTotiAng.DataSource = cmd.ExecuteReader();
             afiseazaTotiAng.ViewStateMode = ViewStateMode.Enabled;
             afiseazaTotiAng.DataBind();
-            if(afiseazaTotiAng.Items.Count > 0)
+            if (afiseazaTotiAng.Items.Count > 0)
             {
                 totalcount.Text = afiseazaTotiAng.Items.Count.ToString();
             }
-            
+
             con.Close();
             con.Dispose();
 
-            
+
         }
 
         protected void OnEdit(object sender, EventArgs e)
@@ -50,7 +50,6 @@ namespace ProjectTI.Views
             RepeaterItem item = (sender as LinkButton).Parent as RepeaterItem;
             this.ToggleElements(item, true);
         }
-        //test
         private void ToggleElements(RepeaterItem item, bool isEdit)
         {
             //Toggle Buttons.
@@ -71,8 +70,8 @@ namespace ProjectTI.Views
             item.FindControl("lblCompensatie").Visible = !isEdit;
             item.FindControl("lblAvans").Visible = !isEdit;
             item.FindControl("lblRetineri").Visible = !isEdit;
-            
-            
+
+
             //Toggle TextBoxes.
             item.FindControl("txtNume").Visible = isEdit;
             item.FindControl("txtPrenume").Visible = isEdit;
@@ -89,7 +88,6 @@ namespace ProjectTI.Views
 
         protected void OnUpdate(object sender, EventArgs e)
         {
-            //Find the reference of the Repeater Item.
             RepeaterItem item = (sender as LinkButton).Parent as RepeaterItem;
             int nrCrt = int.Parse((item.FindControl("lblNrCrt") as Label).Text);
             string nume = (item.FindControl("txtNume") as TextBox).Text.Trim();
@@ -135,13 +133,13 @@ namespace ProjectTI.Views
         {
             //Find the reference of the Repeater Item.
             RepeaterItem item = (sender as LinkButton).Parent as RepeaterItem;
-            int customerId = int.Parse((item.FindControl("NrCrt") as Label).Text);
+            int customerId = int.Parse((item.FindControl("lblNrCrt") as Label).Text);
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString);
             {
                 using (SqlCommand cmd = new SqlCommand("DELETE FROM DateAngajati WHERE NrCrt=@NrCrt"))
                 {
-                    
+
                     cmd.Parameters.AddWithValue("@NrCrt", customerId);
                     cmd.Connection = con;
                     con.Open();
@@ -149,7 +147,26 @@ namespace ProjectTI.Views
                     con.Close();
                 }
             }
-          //  this.BindRepeater();
+            afiseazaAngajati_Click(null, null);
+        }
+        protected void OnCancel(object sender, EventArgs e)
+        {
+            RepeaterItem item = (sender as LinkButton).Parent as RepeaterItem;
+            this.ToggleElements(item, false);
+        }
+
+        //Search
+        private void txtSearch(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString);
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT * from DateAngajati where Nume like '%'", con))
+                {
+                    afiseazaTotiAng.DataSource = cmd.ExecuteReader();
+                    afiseazaTotiAng.ViewStateMode = ViewStateMode.Enabled;
+                    afiseazaTotiAng.DataBind();
+                }
+            }
         }
     }
 }
