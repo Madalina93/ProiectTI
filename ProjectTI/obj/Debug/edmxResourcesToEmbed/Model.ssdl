@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AngajatiModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DateAngajati">
+    <Key>
+      <PropertyRef Name="NrCrt" />
+    </Key>
+    <Property Name="NrCrt" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Poza" Type="varchar" MaxLength="100" />
+    <Property Name="Nume" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Prenume" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Functie" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SalarNegociat" Type="int" Nullable="false" />
+    <Property Name="SalarRealizat" Type="int" Nullable="false" />
+    <Property Name="Vechime" Type="int" Nullable="false" />
+    <Property Name="Spor" Type="int" Nullable="false" />
+    <Property Name="PremiiBrute" Type="int" />
+    <Property Name="Compensatie" Type="int" />
+    <Property Name="TotalBrut" Type="int" />
+    <Property Name="BrutImpozabil" Type="int" />
+    <Property Name="Impozit" Type="int" />
+    <Property Name="CAS" Type="int" />
+    <Property Name="Somaj" Type="int" />
+    <Property Name="Sanat" Type="int" />
+    <Property Name="Avans" Type="int" Nullable="false" />
+    <Property Name="Retineri" Type="int" Nullable="false" />
+    <Property Name="RestPlata" Type="int" />
+    <Property Name="Data" Type="date" />
+  </EntityType>
+  <EntityType Name="Procente">
+    <Key>
+      <PropertyRef Name="ProcenteID" />
+    </Key>
+    <Property Name="ProcenteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CAS" Type="float" />
+    <Property Name="Sanat" Type="float" />
+    <Property Name="Somaj" Type="float" />
+    <Property Name="Impozit" Type="float" />
+    <Property Name="Parola" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Function Name="GetEmployeeBetweenDates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+  </Function>
+  <EntityContainer Name="AngajatiModel1StoreContainer">
+    <EntitySet Name="DateAngajati" EntityType="Self.DateAngajati" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Procente" EntityType="Self.Procente" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

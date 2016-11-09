@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AngajatiModel1StoreContainer" CdmEntityContainer="AngajatiEntities1">
+    <EntitySetMapping Name="DateAngajatis">
+      <EntityTypeMapping TypeName="AngajatiModel1.DateAngajati">
+        <MappingFragment StoreEntitySet="DateAngajati">
+          <ScalarProperty Name="NrCrt" ColumnName="NrCrt" />
+          <ScalarProperty Name="Poza" ColumnName="Poza" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+          <ScalarProperty Name="Functie" ColumnName="Functie" />
+          <ScalarProperty Name="SalarNegociat" ColumnName="SalarNegociat" />
+          <ScalarProperty Name="SalarRealizat" ColumnName="SalarRealizat" />
+          <ScalarProperty Name="Vechime" ColumnName="Vechime" />
+          <ScalarProperty Name="Spor" ColumnName="Spor" />
+          <ScalarProperty Name="PremiiBrute" ColumnName="PremiiBrute" />
+          <ScalarProperty Name="Compensatie" ColumnName="Compensatie" />
+          <ScalarProperty Name="TotalBrut" ColumnName="TotalBrut" />
+          <ScalarProperty Name="BrutImpozabil" ColumnName="BrutImpozabil" />
+          <ScalarProperty Name="Impozit" ColumnName="Impozit" />
+          <ScalarProperty Name="CAS" ColumnName="CAS" />
+          <ScalarProperty Name="Somaj" ColumnName="Somaj" />
+          <ScalarProperty Name="Sanat" ColumnName="Sanat" />
+          <ScalarProperty Name="Avans" ColumnName="Avans" />
+          <ScalarProperty Name="Retineri" ColumnName="Retineri" />
+          <ScalarProperty Name="RestPlata" ColumnName="RestPlata" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Procentes">
+      <EntityTypeMapping TypeName="AngajatiModel1.Procente">
+        <MappingFragment StoreEntitySet="Procente">
+          <ScalarProperty Name="ProcenteID" ColumnName="ProcenteID" />
+          <ScalarProperty Name="CAS" ColumnName="CAS" />
+          <ScalarProperty Name="Sanat" ColumnName="Sanat" />
+          <ScalarProperty Name="Somaj" ColumnName="Somaj" />
+          <ScalarProperty Name="Impozit" ColumnName="Impozit" />
+          <ScalarProperty Name="Parola" ColumnName="Parola" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetEmployeeBetweenDates" FunctionName="AngajatiModel1.Store.GetEmployeeBetweenDates">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AngajatiModel1.GetEmployeeBetweenDates_Result">
+          <ScalarProperty Name="NrCrt" ColumnName="NrCrt" />
+          <ScalarProperty Name="Poza" ColumnName="Poza" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+          <ScalarProperty Name="Functie" ColumnName="Functie" />
+          <ScalarProperty Name="SalarNegociat" ColumnName="SalarNegociat" />
+          <ScalarProperty Name="SalarRealizat" ColumnName="SalarRealizat" />
+          <ScalarProperty Name="Vechime" ColumnName="Vechime" />
+          <ScalarProperty Name="Spor" ColumnName="Spor" />
+          <ScalarProperty Name="PremiiBrute" ColumnName="PremiiBrute" />
+          <ScalarProperty Name="Compensatie" ColumnName="Compensatie" />
+          <ScalarProperty Name="TotalBrut" ColumnName="TotalBrut" />
+          <ScalarProperty Name="BrutImpozabil" ColumnName="BrutImpozabil" />
+          <ScalarProperty Name="Impozit" ColumnName="Impozit" />
+          <ScalarProperty Name="CAS" ColumnName="CAS" />
+          <ScalarProperty Name="Somaj" ColumnName="Somaj" />
+          <ScalarProperty Name="Sanat" ColumnName="Sanat" />
+          <ScalarProperty Name="Avans" ColumnName="Avans" />
+          <ScalarProperty Name="Retineri" ColumnName="Retineri" />
+          <ScalarProperty Name="RestPlata" ColumnName="RestPlata" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

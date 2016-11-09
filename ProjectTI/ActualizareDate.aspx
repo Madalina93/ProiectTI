@@ -2,10 +2,15 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-        <td>
+       <%-- <td>
             <asp:Label ID="lblSearch" runat="server">Cauta dupa nume: </asp:Label>
             <asp:TextBox Style="width: 150px" ID="txtSearch" runat="server" ></asp:TextBox>
+        </td>--%>
+        <td>
+            <asp:Label  ID="lblSearch" runat="server">Cauta dupa nume: </asp:Label>
+            <asp:TextBox Style="width: 150px" ID="TextBox1" runat="server" ></asp:TextBox>
         </td>
+        <asp:Button ID="Cauta" runat="server" Text="Cauta angajatul" OnClick="CautaAngajati_Click" />
     </div>
 
 

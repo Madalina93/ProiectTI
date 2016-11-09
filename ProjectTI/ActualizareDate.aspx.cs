@@ -43,6 +43,33 @@ namespace ProjectTI.Views
 
 
         }
+       protected void CautaAngajati_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString);
+            {
+                var query = String.Format("SELECT * FROM DateAngajati WHERE Nume = '{0}' AND Prenume = '{1}'",
+                    TextBox1.Text.Split(' ')[0], TextBox1.Text.Split(' ')[1]);
+                SqlCommand cmd = new SqlCommand(query, con);
+                try
+                {
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                    DataTable dt = new DataTable();
+                    
+                    sda.Fill(dt);
+                    afiseazaTotiAng.DataSource = dt;
+                    afiseazaTotiAng.DataBind();
+                    con.Close();
+                    con.Dispose();
+                }
+
+                    
+                catch (Exception ex)
+                { }
+            }
+        }
+
 
         protected void OnEdit(object sender, EventArgs e)
         {
@@ -155,18 +182,6 @@ namespace ProjectTI.Views
             this.ToggleElements(item, false);
         }
 
-        //Search
-        private void txtSearch(object sender, EventArgs e)
-        {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString);
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT * from DateAngajati where Nume like '%'", con))
-                {
-                    afiseazaTotiAng.DataSource = cmd.ExecuteReader();
-                    afiseazaTotiAng.ViewStateMode = ViewStateMode.Enabled;
-                    afiseazaTotiAng.DataBind();
-                }
-            }
-        }
+       
     }
 }

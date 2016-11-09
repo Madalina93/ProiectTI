@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EmployeeModelStoreContainer" CdmEntityContainer="AngajatiEntities2">
+    <FunctionImportMapping FunctionImportName="GetEmployeeBetweenDates" FunctionName="EmployeeModel.Store.GetEmployeeBetweenDates">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeeModel.GetEmployeeBetweenDates_Result">
+          <ScalarProperty Name="NrCrt" ColumnName="NrCrt" />
+          <ScalarProperty Name="Poza" ColumnName="Poza" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+          <ScalarProperty Name="Functie" ColumnName="Functie" />
+          <ScalarProperty Name="SalarNegociat" ColumnName="SalarNegociat" />
+          <ScalarProperty Name="SalarRealizat" ColumnName="SalarRealizat" />
+          <ScalarProperty Name="Vechime" ColumnName="Vechime" />
+          <ScalarProperty Name="Spor" ColumnName="Spor" />
+          <ScalarProperty Name="PremiiBrute" ColumnName="PremiiBrute" />
+          <ScalarProperty Name="Compensatie" ColumnName="Compensatie" />
+          <ScalarProperty Name="TotalBrut" ColumnName="TotalBrut" />
+          <ScalarProperty Name="BrutImpozabil" ColumnName="BrutImpozabil" />
+          <ScalarProperty Name="Impozit" ColumnName="Impozit" />
+          <ScalarProperty Name="CAS" ColumnName="CAS" />
+          <ScalarProperty Name="Somaj" ColumnName="Somaj" />
+          <ScalarProperty Name="Sanat" ColumnName="Sanat" />
+          <ScalarProperty Name="Avans" ColumnName="Avans" />
+          <ScalarProperty Name="Retineri" ColumnName="Retineri" />
+          <ScalarProperty Name="RestPlata" ColumnName="RestPlata" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

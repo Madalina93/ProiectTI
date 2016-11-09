@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AngajatiModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DateAngajati">
+    <Key>
+      <PropertyRef Name="NrCrt" />
+    </Key>
+    <Property Name="NrCrt" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Poza" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Nume" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Prenume" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Functie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SalarNegociat" Type="Int32" Nullable="false" />
+    <Property Name="SalarRealizat" Type="Int32" Nullable="false" />
+    <Property Name="Vechime" Type="Int32" Nullable="false" />
+    <Property Name="Spor" Type="Int32" Nullable="false" />
+    <Property Name="PremiiBrute" Type="Int32" />
+    <Property Name="Compensatie" Type="Int32" />
+    <Property Name="TotalBrut" Type="Int32" />
+    <Property Name="BrutImpozabil" Type="Int32" />
+    <Property Name="Impozit" Type="Int32" />
+    <Property Name="CAS" Type="Int32" />
+    <Property Name="Somaj" Type="Int32" />
+    <Property Name="Sanat" Type="Int32" />
+    <Property Name="Avans" Type="Int32" Nullable="false" />
+    <Property Name="Retineri" Type="Int32" Nullable="false" />
+    <Property Name="RestPlata" Type="Int32" />
+    <Property Name="Data" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Procente">
+    <Key>
+      <PropertyRef Name="ProcenteID" />
+    </Key>
+    <Property Name="ProcenteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CAS" Type="Double" />
+    <Property Name="Sanat" Type="Double" />
+    <Property Name="Somaj" Type="Double" />
+    <Property Name="Impozit" Type="Double" />
+    <Property Name="Parola" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="AngajatiEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DateAngajatis" EntityType="Self.DateAngajati" />
+    <EntitySet Name="Procentes" EntityType="Self.Procente" />
+    <FunctionImport Name="GetEmployeeBetweenDates" ReturnType="Collection(AngajatiModel1.GetEmployeeBetweenDates_Result)">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetEmployeeBetweenDates_Result">
+    <Property Type="Int32" Name="NrCrt" Nullable="false" />
+    <Property Type="String" Name="Poza" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Nume" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Prenume" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Functie" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="SalarNegociat" Nullable="false" />
+    <Property Type="Int32" Name="SalarRealizat" Nullable="false" />
+    <Property Type="Int32" Name="Vechime" Nullable="false" />
+    <Property Type="Int32" Name="Spor" Nullable="false" />
+    <Property Type="Int32" Name="PremiiBrute" Nullable="true" />
+    <Property Type="Int32" Name="Compensatie" Nullable="true" />
+    <Property Type="Int32" Name="TotalBrut" Nullable="true" />
+    <Property Type="Int32" Name="BrutImpozabil" Nullable="true" />
+    <Property Type="Int32" Name="Impozit" Nullable="true" />
+    <Property Type="Int32" Name="CAS" Nullable="true" />
+    <Property Type="Int32" Name="Somaj" Nullable="true" />
+    <Property Type="Int32" Name="Sanat" Nullable="true" />
+    <Property Type="Int32" Name="Avans" Nullable="false" />
+    <Property Type="Int32" Name="Retineri" Nullable="false" />
+    <Property Type="Int32" Name="RestPlata" Nullable="true" />
+    <Property Type="DateTime" Name="Data" Nullable="true" />
+  </ComplexType>
+</Schema>
