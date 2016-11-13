@@ -42,7 +42,12 @@
         <div class="container">
             
                 <h5>PROIECT ASP.NET ALICATIE SALARIZARE - SUTOI MADALINA-BIANCA </h5>
-             <p> <%: DateTime.Now %> </p>
+            <%-- <p> <%: DateTime.Now %> 
+                 <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+&nbsp;<asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick">
+                 </asp:Timer>
+                </p>--%>
+
         </div>
       
     <div class="fotorama"
@@ -93,7 +98,7 @@
                             </ul>
                             
                         </li>
-                        <li><a runat="server" href="~/Contact">Procente</a></li>
+                        <li><a runat="server" href="Procente.aspx">Procente</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>

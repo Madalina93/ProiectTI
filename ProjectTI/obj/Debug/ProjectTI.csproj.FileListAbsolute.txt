@@ -52,3 +52,4 @@ C:\Master\TI\ProjectTI\ProjectTI\obj\Debug\ProjectTI.pdb
 C:\Master\TI\ProjectTI\ProjectTI\obj\Debug\RdlCompile.cache
 C:\Master\TI\ProjectTI\ProjectTI\obj\Debug\RdlCompile.compiled
 C:\Master\TI\ProjectTI\ProjectTI\obj\Debug\ProjectTI.csprojResolveAssemblyReference.cache
+C:\Master\TI\ProjectTI\ProjectTI\bin\AjaxControlToolkit.dll

@@ -75,13 +75,13 @@ namespace ProjectTI.Views
             prenume.Text = string.Empty;
             functie.Text = string.Empty;
             salarN.Text = string.Empty;
-            salarR.Text = string.Empty;
-            vechime.Text = string.Empty;
-            spor.Text = string.Empty;
-            premii.Text = string.Empty;
-            compensatie.Text = string.Empty;
-            avans.Text = string.Empty;
-            retineri.Text = string.Empty;
+            //salarR.Text = string.Empty;
+            //vechime.Text = string.Empty;
+            //spor.Text = string.Empty;
+            //premii.Text = string.Empty;
+            //compensatie.Text = string.Empty;
+            //avans.Text = string.Empty;
+            //retineri.Text = string.Empty;
 
         }
     }

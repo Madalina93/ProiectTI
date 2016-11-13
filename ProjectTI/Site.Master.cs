@@ -68,12 +68,17 @@ namespace ProjectTI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+        //    Label1.Text = DateTime.Now.ToString();
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut();
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 
