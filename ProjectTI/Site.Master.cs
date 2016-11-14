@@ -11,6 +11,7 @@ namespace ProjectTI
 {
     public partial class SiteMaster : MasterPage
     {
+        
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
@@ -68,7 +69,10 @@ namespace ProjectTI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-        //    Label1.Text = DateTime.Now.ToString();
+         //   Label1.Text = DateTime.Now.ToLongTimeString();
+
+         //   Label2.Text = DateTime.Now.TimeOfDay.ToString();
+            //Label1.Text = DateTime.Now.ToString();
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
@@ -78,6 +82,8 @@ namespace ProjectTI
 
         protected void Timer1_Tick(object sender, EventArgs e)
         {
+           // Label1.Text = DateTime.Now.ToString();
+           // Label1.Text = DateTime.Now.ToString("HH:mm:ss");
 
         }
     }

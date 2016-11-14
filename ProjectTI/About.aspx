@@ -1,7 +1,18 @@
 ﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="ProjectTI.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
-    <h3>Your application description page.</h3>
-    <p>Use this area to provide additional information.</p>
+
+
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="Timer2" EventName="tick" />
+                </Triggers>
+                <ContentTemplate>
+                    <asp:Timer ID="Timer2" runat="server" Interval="1"></asp:Timer>
+                    <br />
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
+ 
 </asp:Content>

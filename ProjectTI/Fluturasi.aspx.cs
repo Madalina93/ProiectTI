@@ -17,10 +17,11 @@ namespace ProjectTI.Views
         {
           //  DataSetFluturasi
         }
+       
         private void ShowReport()
         {
             ReportViewer1.Reset();
-
+            
             DataTable dt = GetData();
             ReportDataSource rds = new ReportDataSource("DataSetFluturasi", dt);
 
@@ -36,7 +37,7 @@ namespace ProjectTI.Views
         {
             DataTable dt = new DataTable();
 
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString); //@"Data Source=MSUTOI-PC;Initial Catalog=Angajati;Integrated Security=True"
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString); 
             con.Open();
 
             SqlCommand cmdQ = new SqlCommand("SELECT * FROM DateAngajati", con);
@@ -45,6 +46,21 @@ namespace ProjectTI.Views
 
             return dt;
         }
+
+        //protected void CrystalReportViewer1_Init(object sender, EventArgs e)
+        //{
+        //    DataTable dt = new DataTable();
+        //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString);
+        //    con.Open();
+
+        //    SqlCommand cmdQ = new SqlCommand("SELECT * FROM DateAngajati", con);
+        //    SqlDataAdapter sda = new SqlDataAdapter(cmdQ);
+        //    DataSet ds= new DataSet();
+        //    sda.Fill(dt);
+        //    CrystalReport1 raport = new CrystalReport1();
+        //    raport.SetDataSource(ds.Tables["DateAngajati"]);
+        //    CrystalReportViewer1.ReportSource = raport;
+        //}
 
        }
 }

@@ -70,14 +70,7 @@ namespace ProjectTI
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString); //@"Data Source=MSUTOI-PC;Initial Catalog=Angajati;Integrated Security=True"
             con.Open();
-            //SqlCommand cmd = new SqlCommand("GetEmployeeBetweenDates", con);
-            //cmd.CommandType = CommandType.StoredProcedure;
-            //cmd.Parameters.Add("@FromDate", SqlDbType.DateTime).Value = fromDate;
-            //cmd.Parameters.Add("@ToDate", SqlDbType.DateTime).Value = toDate;
-
-            //SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            //sda.Fill(dt);
-
+            
             SqlCommand cmdQ = new SqlCommand("SELECT * FROM DateAngajati", con);
             ///cmd.CommandType = CommandType.Text
             SqlDataAdapter sda = new SqlDataAdapter(cmdQ);

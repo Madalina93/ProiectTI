@@ -11,13 +11,17 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <!-- 3 KB -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+
 </head>
+
 <body>
+    
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -38,38 +42,56 @@
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
             </Scripts>
+
         </asp:ScriptManager>
+         
         <div class="container">
-            
-                <h5>PROIECT ASP.NET ALICATIE SALARIZARE - SUTOI MADALINA-BIANCA </h5>
-            <%-- <p> <%: DateTime.Now %> 
-                 <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-&nbsp;<asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick">
-                 </asp:Timer>
-                </p>--%>
+
+            <h4 style="color:forestgreen;font-weight: bold;">PROIECT ASP.NET APLICATIE SALARIZARE - SUTOI MADALINA-BIANCA </h4>
+          <%--  <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="Timer2" EventName="tick" />
+                </Triggers>
+                <ContentTemplate>
+                    <asp:Timer ID="Timer2" runat="server" Interval="1"></asp:Timer>
+                    <br />
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="Timer2" EventName="tick" />
+                </Triggers>
+                <ContentTemplate>
+                    <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></ContentTemplate>
+            </asp:UpdatePanel>--%>
+
+            <%--<asp:UpdatePanel ID="upDynamicClock" runat="server" OnLoad="Page_Load">
+
+                <ContentTemplate>
+                    <asp:Timer ID="Timer2" runat="server" Interval="1"></asp:Timer>
+                    <br />
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                </ContentTemplate>
+
+            </asp:UpdatePanel>--%>
 
         </div>
-      
-    <div class="fotorama"
-         data-autoplay="true" data-width="100%" data-height="40%"  data-fit="cover" > <%-- style="margin-left:30vh" --%>  
-        <img src="Images/images1.jpg">
-        <img src="Images/images2.jpg">      
-        <img src="Images/images3.jpg">
-        <img src="Images/images4.jpeg">
-       
-    </div>
-          
 
-       
-  <%-- <div class="fotorama"
-         data-autoplay="true" data-width="30%" data-height="40%"   data-align="right"    data-fit="cover" >
-        <img src="Images/images1.jpg">
-        <img src="Images/images2.jpg">      
-        <img src="Images/images3.jpg">
-        <img src="Images/images4.jpeg">
-       
-    </div>--%>
-  
+       <%-- <div class="fotorama"
+            data-autoplay="true" data-width="100%" data-height="40%" data-fit="cover">
+            <img src="Images/images1.jpg">
+            <img src="Images/images2.jpg">
+            <img src="Images/images3.jpg">
+            <img src="Images/images4.jpeg">
+        </div>--%>
+
+        <asp:UpdatePanel runat="server">
+           
+           <%-- <asp:Image runat="server" ID="ima"></asp:Image>
+            <asp:Image runat="server" ID="Image1"></asp:Image>--%>
+        </asp:UpdatePanel>
 
         <div class="navbar navbar-inverse navbar">
             <div class="container">
@@ -79,24 +101,24 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                   <%-- <a class="navbar-brand" runat="server" href="~/">Application name</a>--%>
+                    <%-- <a class="navbar-brand" runat="server" href="~/">Application name</a>--%>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li class="dropdown nav "><a runat="server" class="dropdown-toggle" data-toggle="dropdown">Indroducere date<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                    <li><a href="ActualizareDate.aspx">Actualizare Date</a></li>
-                                    <li><a href="Adaugare.aspx">Adaugare</a></li>
-                                </ul>
-                            
-                        </li>
-                         <li class="dropdown nav "><a runat="server" class="dropdown-toggle" data-toggle="dropdown">Rapoarte<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                    <li><a href="Rapoarte.aspx">Stat de plata</a></li>
-                                    <li><a href="Fluturasi.aspx">Fluturasi</a></li>
+                                <li><a href="ActualizareDate.aspx">Actualizare Date</a></li>
+                                <li><a href="Adaugare.aspx">Adaugare</a></li>
                             </ul>
-                            
+
+                        </li>
+                        <li class="dropdown nav "><a runat="server" class="dropdown-toggle" data-toggle="dropdown">Rapoarte<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="Rapoarte.aspx">Stat de plata</a></li>
+                                <li><a href="Fluturasi.aspx">Fluturasi</a></li>
+                            </ul>
+
                         </li>
                         <li><a runat="server" href="Procente.aspx">Procente</a></li>
                     </ul>
@@ -124,9 +146,11 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-               
             </footer>
         </div>
     </form>
+    
+
 </body>
+
 </html>

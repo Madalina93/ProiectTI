@@ -34,7 +34,7 @@
     
 
     <asp:Button ID="SalveazaP" runat="server" Text="Salveaza" OnClick="SalveazaProcente_Click" Visible="false"/>
-    <asp:Button ID="RenuntaP" runat="server" Text="Renunta" OnClick="RenuntaProcente_Click" Visible="false"/>
+    <asp:Button ID="RenuntaP" runat="server" Text="Renunta" Type="Reset" OnClick="RenuntaProcente_Click" Visible="false"/>
 
 
     <asp:Label ID="lblPass" runat="server" Text="Label">Pentru a avea acces la tabela Procente, introduceti parola:</asp:Label>
