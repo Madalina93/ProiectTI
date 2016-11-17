@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    
+
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -44,22 +44,113 @@
             </Scripts>
 
         </asp:ScriptManager>
-         
+        <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <asp:Timer ID="Timer1" runat="server" Interval="1000">
+                </asp:Timer>
+                <asp:Label ID="lblcurrenttime" runat="server" Text=""></asp:Label>
+            </ContentTemplate>
+        </asp:UpdatePanel>--%>
+         <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style4 {
+            height: 65px;
+        }
+        .auto-style5 {
+            height: 68px;
+        }
+        .auto-style6 {
+            height: 172px;
+            width: 227px;
+        }
+        .auto-style8 {
+            height: 272px;
+            width: 736px;
+        }
+        .auto-style9 {
+            height: 272px;
+        }
+    </style>
+
         <div class="container">
 
-            <h4 style="color:forestgreen;font-weight: bold;">PROIECT ASP.NET APLICATIE SALARIZARE - SUTOI MADALINA-BIANCA </h4>
-          <%--  <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <h4 style="color: forestgreen; font-weight: bold;">PROIECT ASP.NET APLICATIE SALARIZARE - SUTOI MADALINA-BIANCA </h4>
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <ContentTemplate>
+                    <asp:Timer ID="Timer2" runat="server" Interval="1000">
+                    </asp:Timer>
+                    <asp:Label ID="lblcurrenttime" runat="server" Text=""></asp:Label>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
+           <%-- <asp:UpdatePanel ID="UpdatePanelPoze" runat="server">
+                <ContentTemplate>
+                    <asp:Image ID="image2" runat="server"></asp:Image>
+                    <asp:Image ID="Image1" runat="server" />
+                    <asp:Timer ID="Timer1Poza" runat="server"></asp:Timer>
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                </ContentTemplate>
+            </asp:UpdatePanel>--%>
+
+              <table class="auto-style1">
+                   <td class="auto-style6" style="background-color:transparent; color: #FFFFFF">
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+<br />
+                            <asp:Timer ID="Timer1" runat="server" Interval="2000" OnTick="Timer1_Tick">
+                            </asp:Timer>
+                            <asp:Image ID="Image3" runat="server" Height="252px" Width="379px" />
+<br />
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                       </td>
+                
+                   <td class="auto-style8" style="background-color:transparent; color: #FFFFFF">
+                    <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                        <ContentTemplate>
+<br />
+                            <asp:Timer ID="Timer3" runat="server" Interval="2000" OnTick="Timer3_Tick">
+                            </asp:Timer>
+<br />
+                            <br />
+                            <br />
+                            <asp:Image ID="Image4" runat="server" Height="253px" Width="387px" />
+                            <br />
+                            <br />
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                       </td>
+
+                   <td class="auto-style6" style="background-color:transparent; color: #FFFFFF">
+                    <asp:UpdatePanel ID="UpdatePanel4" runat="server">
+                        <ContentTemplate>
+<br />
+                            <asp:Timer ID="Timer4" runat="server" Interval="2000" OnTick="Timer4_Tick">
+                            </asp:Timer>
+                            <asp:Image ID="Image1" runat="server" Height="252px" Width="379px" />
+<br />
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                       </td>
+
+                  </table>
+
+            <%--  <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <Triggers>
                     <asp:AsyncPostBackTrigger ControlID="Timer2" EventName="tick" />
                 </Triggers>
                 <ContentTemplate>
-                    <asp:Timer ID="Timer2" runat="server" Interval="1"></asp:Timer>
+                    <asp:Timer ID="Timer2" runat="server" Interval="1" OnTick="Timer2_Tick"></asp:Timer>
                     <br />
                     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                 </ContentTemplate>
-            </asp:UpdatePanel>
+            </asp:UpdatePanel>--%>
 
-            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+            <%--  <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                 <Triggers>
                     <asp:AsyncPostBackTrigger ControlID="Timer2" EventName="tick" />
                 </Triggers>
@@ -76,7 +167,6 @@
                 </ContentTemplate>
 
             </asp:UpdatePanel>--%>
-
         </div>
 
        <%-- <div class="fotorama"
@@ -88,8 +178,8 @@
         </div>--%>
 
         <asp:UpdatePanel runat="server">
-           
-           <%-- <asp:Image runat="server" ID="ima"></asp:Image>
+
+            <%-- <asp:Image runat="server" ID="ima"></asp:Image>
             <asp:Image runat="server" ID="Image1"></asp:Image>--%>
         </asp:UpdatePanel>
 
@@ -149,7 +239,7 @@
             </footer>
         </div>
     </form>
-    
+
 
 </body>
 

@@ -11,6 +11,9 @@
             <asp:TextBox Style="width: 150px" ID="TextBox1" runat="server" ></asp:TextBox>
         </td>
         <asp:Button ID="Cauta" runat="server" Text="Cauta angajatul" OnClick="CautaAngajati_Click" />
+        
+        <asp:Label Style="margin-left:250px" ID="LabelPrimaAngajati" runat="server" Text="Introduceti suma aferenta primei pentru toti angajatii:"></asp:Label>
+        <asp:TextBox ID="TextBoxPrimaAngajati" runat="server"></asp:TextBox>
     </div>
 
 

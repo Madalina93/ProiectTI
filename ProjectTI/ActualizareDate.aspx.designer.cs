@@ -40,6 +40,24 @@ namespace ProjectTI.Views {
         protected global::System.Web.UI.WebControls.Button Cauta;
         
         /// <summary>
+        /// LabelPrimaAngajati control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelPrimaAngajati;
+        
+        /// <summary>
+        /// TextBoxPrimaAngajati control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPrimaAngajati;
+        
+        /// <summary>
         /// afiseaza control.
         /// </summary>
         /// <remarks>

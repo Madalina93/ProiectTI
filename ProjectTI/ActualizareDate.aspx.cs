@@ -47,8 +47,12 @@ namespace ProjectTI.Views
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString);
             {
-                var query = String.Format("SELECT * FROM DateAngajati WHERE Nume = '{0}' AND Prenume = '{1}'",
-                    TextBox1.Text.Split(' ')[0], TextBox1.Text.Split(' ')[1]);
+                var searchParts = TextBox1.Text.Split(' ');
+                var query = String.Format("SELECT * FROM DateAngajati WHERE Nume = '{0}' OR Prenume = '{0}'", searchParts[0]);
+
+                if (searchParts.Count() > 1)
+                    query += " OR Nume = '" + searchParts[1] + "' OR Prenume = '" + searchParts[1] + "'";
+
                 SqlCommand cmd = new SqlCommand(query, con);
                 try
                 {
