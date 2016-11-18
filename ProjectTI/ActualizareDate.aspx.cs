@@ -16,20 +16,23 @@ namespace ProjectTI.Views
         protected void Page_Load(object sender, EventArgs e)
         {
         }
+        public void MessageBox(String Message)
+        {
+            Page.ClientScript.RegisterStartupScript(
+               Page.GetType(),
+               "MessageBox",
+               "<script language='javascript'>alert('" + Message + "'); </script>"
+            );
+
+        }
 
         protected void afiseazaAngajati_Click(object sender, EventArgs e)
         {
-
-
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString); //@"Data Source=MSUTOI-PC;Initial Catalog=Angajati;Integrated Security=True"
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM DateAngajati", con);
 
-
-            //SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //DataSet ds = new DataSet();
-            //da.Fill(ds, "DateAngajati");
             afiseazaTotiAng.DataSource = cmd.ExecuteReader();
             afiseazaTotiAng.ViewStateMode = ViewStateMode.Enabled;
             afiseazaTotiAng.DataBind();
@@ -40,7 +43,6 @@ namespace ProjectTI.Views
 
             con.Close();
             con.Dispose();
-
 
         }
        protected void CautaAngajati_Click(object sender, EventArgs e)
@@ -155,7 +157,7 @@ namespace ProjectTI.Views
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
-
+            MessageBox("Actualizarea a avut loc cu succes!");
             ToggleElements(item, false);
             afiseazaAngajati_Click(null, null);
         }
@@ -177,6 +179,7 @@ namespace ProjectTI.Views
                     cmd.ExecuteNonQuery();
                     con.Close();
                 }
+                MessageBox("Stergerea a avut loc cu succes!");
             }
             afiseazaAngajati_Click(null, null);
         }
@@ -184,6 +187,21 @@ namespace ProjectTI.Views
         {
             RepeaterItem item = (sender as LinkButton).Parent as RepeaterItem;
             this.ToggleElements(item, false);
+        }
+
+        protected void ButtonPrimaAngajati_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString); //@"Data Source=MSUTOI-PC;Initial Catalog=Angajati;Integrated Security=True"
+            con.Open();
+
+            var query = "UPDATE DateAngajati SET PremiiBrute=PremiiBrute + " + TextBoxPrimaAngajati.Text;
+            SqlCommand cmd = new SqlCommand(query, con);
+            {
+                SqlDataAdapter adap=new SqlDataAdapter();
+                adap.UpdateCommand = cmd;
+                cmd.ExecuteNonQuery();
+            }
+            MessageBox("Adaugarea premiilor pentru toti angajatii s-a finlizat cu succes!");
         }
 
        

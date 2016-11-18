@@ -58,6 +58,15 @@ namespace ProjectTI.Views {
         protected global::System.Web.UI.WebControls.TextBox TextBoxPrimaAngajati;
         
         /// <summary>
+        /// ButtonPrimaAngajati control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonPrimaAngajati;
+        
+        /// <summary>
         /// afiseaza control.
         /// </summary>
         /// <remarks>

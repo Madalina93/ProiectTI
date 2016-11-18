@@ -12,8 +12,9 @@
         </td>
         <asp:Button ID="Cauta" runat="server" Text="Cauta angajatul" OnClick="CautaAngajati_Click" />
         
-        <asp:Label Style="margin-left:250px" ID="LabelPrimaAngajati" runat="server" Text="Introduceti suma aferenta primei pentru toti angajatii:"></asp:Label>
+        <asp:Label Style="margin-left:200px" ID="LabelPrimaAngajati" runat="server" Text="Introduceti suma aferenta primei pentru toti angajatii:"></asp:Label>
         <asp:TextBox ID="TextBoxPrimaAngajati" runat="server"></asp:TextBox>
+        <asp:Button ID="ButtonPrimaAngajati" runat="server" Text="Aplica" OnClick="ButtonPrimaAngajati_Click" />
     </div>
 
 
