@@ -15,13 +15,23 @@ namespace ProjectTI.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          //  DataSetFluturasi
+            //  DataSetFluturasi
         }
-       
+
+        public void MessageBox(String Message)
+        {
+            Page.ClientScript.RegisterStartupScript(
+               Page.GetType(),
+               "MessageBox",
+               "<script language='javascript'>alert('" + Message + "'); </script>"
+            );
+
+        }
+
         private void ShowReport()
         {
             ReportViewer1.Reset();
-            
+
             DataTable dt = GetData();
             ReportDataSource rds = new ReportDataSource("DataSetFluturasi", dt);
 
@@ -29,7 +39,7 @@ namespace ProjectTI.Views
 
             ReportViewer1.LocalReport.ReportPath = "Fluturasi.rdlc";
 
-           
+
             ReportViewer1.LocalReport.Refresh();
 
         }
@@ -37,7 +47,7 @@ namespace ProjectTI.Views
         {
             DataTable dt = new DataTable();
 
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString); 
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString);
             con.Open();
 
             SqlCommand cmdQ = new SqlCommand("SELECT * FROM DateAngajati", con);
@@ -47,20 +57,31 @@ namespace ProjectTI.Views
             return dt;
         }
 
-        //protected void CrystalReportViewer1_Init(object sender, EventArgs e)
-        //{
-        //    DataTable dt = new DataTable();
-        //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString);
-        //    con.Open();
+        protected void ButtonCautareF_Click(object sender, EventArgs e)
+        {
+            ReportViewer1.Reset();
 
-        //    SqlCommand cmdQ = new SqlCommand("SELECT * FROM DateAngajati", con);
-        //    SqlDataAdapter sda = new SqlDataAdapter(cmdQ);
-        //    DataSet ds= new DataSet();
-        //    sda.Fill(dt);
-        //    CrystalReport1 raport = new CrystalReport1();
-        //    raport.SetDataSource(ds.Tables["DateAngajati"]);
-        //    CrystalReportViewer1.ReportSource = raport;
-        //}
+            DataTable dt = new DataTable();
+            ReportDataSource rds = new ReportDataSource("DataSetFluturasi", dt);
 
-       }
+            ReportViewer1.LocalReport.DataSources.Add(rds);
+
+            ReportViewer1.LocalReport.ReportPath = "Fluturasi.rdlc";
+
+            ReportViewer1.LocalReport.Refresh();
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["AngajatiConnectionString1"].ConnectionString);
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM DateAngajati WHERE Nume = '" + TextBoxCautareF.Text + "' ", con);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(dt);
+
+        }
+
+        protected void RenuntaCautareF_Click(object sender, EventArgs e)
+        {
+            ShowReport();
+        }
+
+    }
 }

@@ -53,8 +53,14 @@ namespace ProjectTI.Views
                 var query = String.Format("SELECT * FROM DateAngajati WHERE Nume = '{0}' OR Prenume = '{0}'", searchParts[0]);
 
                 if (searchParts.Count() > 1)
+                {
                     query += " OR Nume = '" + searchParts[1] + "' OR Prenume = '" + searchParts[1] + "'";
 
+                }
+                else
+                    MessageBox("Angajatul nu a fost gasit!");
+
+                TextBox1.Text = string.Empty;
                 SqlCommand cmd = new SqlCommand(query, con);
                 try
                 {
@@ -72,10 +78,12 @@ namespace ProjectTI.Views
 
                     
                 catch (Exception ex)
-                { }
+                {
+                }
             }
         }
 
+       
 
         protected void OnEdit(object sender, EventArgs e)
         {
@@ -187,6 +195,7 @@ namespace ProjectTI.Views
         {
             RepeaterItem item = (sender as LinkButton).Parent as RepeaterItem;
             this.ToggleElements(item, false);
+            MessageBox("Anulare reusita!");
         }
 
         protected void ButtonPrimaAngajati_Click(object sender, EventArgs e)
@@ -201,7 +210,9 @@ namespace ProjectTI.Views
                 adap.UpdateCommand = cmd;
                 cmd.ExecuteNonQuery();
             }
-            MessageBox("Adaugarea premiilor pentru toti angajatii s-a finlizat cu succes!");
+            MessageBox("Adaugarea premiilor pentru toti angajatii s-a finalizat cu succes!");
+            afiseazaAngajati_Click(null, null);
+            TextBoxPrimaAngajati.Text = string.Empty;
         }
 
        

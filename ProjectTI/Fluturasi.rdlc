@@ -233,7 +233,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>[Nume]</Value>
+                                  <Value>=Fields!Nume.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -781,8 +781,8 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>1.34167in</Top>
-                          <Left>5.60668in</Left>
+                          <Top>1.35556in</Top>
+                          <Left>5.24001in</Left>
                           <Height>0.25in</Height>
                           <Width>1in</Width>
                           <ZIndex>25</ZIndex>
@@ -811,8 +811,8 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>1.98056in</Top>
-                          <Left>5.60668in</Left>
+                          <Top>1.99445in</Top>
+                          <Left>5.24001in</Left>
                           <Height>0.25in</Height>
                           <Width>1in</Width>
                           <ZIndex>26</ZIndex>
@@ -841,8 +841,8 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox7</rd:DefaultName>
-                          <Top>1.66111in</Top>
-                          <Left>5.60668in</Left>
+                          <Top>1.675in</Top>
+                          <Left>5.24001in</Left>
                           <Height>0.25in</Height>
                           <Width>1in</Width>
                           <ZIndex>27</ZIndex>
@@ -871,8 +871,8 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>2.28611in</Top>
-                          <Left>5.60668in</Left>
+                          <Top>2.3in</Top>
+                          <Left>5.24001in</Left>
                           <Height>0.25in</Height>
                           <Width>1in</Width>
                           <ZIndex>28</ZIndex>
@@ -901,8 +901,8 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox7</rd:DefaultName>
-                          <Top>2.60556in</Top>
-                          <Left>5.60668in</Left>
+                          <Top>2.61945in</Top>
+                          <Left>5.24001in</Left>
                           <Height>0.25in</Height>
                           <Width>1in</Width>
                           <ZIndex>29</ZIndex>
@@ -931,8 +931,8 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox1</rd:DefaultName>
-                          <Top>1.02222in</Top>
-                          <Left>5.60668in</Left>
+                          <Top>1.03611in</Top>
+                          <Left>5.24001in</Left>
                           <Height>0.25in</Height>
                           <Width>1in</Width>
                           <ZIndex>30</ZIndex>
@@ -961,8 +961,8 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>0.70278in</Top>
-                          <Left>5.60668in</Left>
+                          <Top>0.71667in</Top>
+                          <Left>5.24001in</Left>
                           <Height>0.25in</Height>
                           <Width>1in</Width>
                           <ZIndex>31</ZIndex>
@@ -1024,7 +1024,7 @@
                           <Top>1.98056in</Top>
                           <Left>3.88168in</Left>
                           <Height>0.25in</Height>
-                          <Width>1.29167in</Width>
+                          <Width>1in</Width>
                           <ZIndex>33</ZIndex>
                           <Style>
                             <Border>
@@ -1084,7 +1084,7 @@
                           <Top>2.28611in</Top>
                           <Left>3.88168in</Left>
                           <Height>0.25in</Height>
-                          <Width>1.45833in</Width>
+                          <Width>1in</Width>
                           <ZIndex>35</ZIndex>
                           <Style>
                             <Border>
@@ -1223,6 +1223,7 @@
                         </Border>
                       </Style>
                     </Rectangle>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>

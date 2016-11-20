@@ -13,6 +13,42 @@ namespace ProjectTI.Views {
     public partial class Stergere {
         
         /// <summary>
+        /// LabelCautareF control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelCautareF;
+        
+        /// <summary>
+        /// TextBoxCautareF control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxCautareF;
+        
+        /// <summary>
+        /// ButtonCautareF control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonCautareF;
+        
+        /// <summary>
+        /// RenuntaCautareF control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button RenuntaCautareF;
+        
+        /// <summary>
         /// ReportViewer1 control.
         /// </summary>
         /// <remarks>

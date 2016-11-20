@@ -8,17 +8,20 @@
         </td>--%>
         <td>
             <asp:Label  ID="lblSearch" runat="server">Cauta dupa nume: </asp:Label>
-            <asp:TextBox Style="width: 150px" ID="TextBox1" runat="server" ></asp:TextBox>
+            <asp:TextBox Style="width: 150px" ID="TextBox1" runat="server" placeholder="Scrieti aici numele"></asp:TextBox>
         </td>
         <asp:Button ID="Cauta" runat="server" Text="Cauta angajatul" OnClick="CautaAngajati_Click" />
         
         <asp:Label Style="margin-left:200px" ID="LabelPrimaAngajati" runat="server" Text="Introduceti suma aferenta primei pentru toti angajatii:"></asp:Label>
-        <asp:TextBox ID="TextBoxPrimaAngajati" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBoxPrimaAngajati" runat="server" placeholder="Scrieti aici suma"></asp:TextBox>
         <asp:Button ID="ButtonPrimaAngajati" runat="server" Text="Aplica" OnClick="ButtonPrimaAngajati_Click" />
+        <br />
+        <br />
     </div>
 
 
     <asp:Button ID="afiseaza" runat="server" Text="Afiseaza toti angajatii" OnClick="afiseazaAngajati_Click" />
+    <br />
     <div>
         <asp:Repeater ID="afiseazaTotiAng" runat="server">
             <HeaderTemplate>
@@ -204,6 +207,7 @@
                 </tr>
             </AlternatingItemTemplate>
         </asp:Repeater>
+        &nbsp;&nbsp;&nbsp;
         <div>
             Numarul total de angajati este: 
             <asp:Label ID="totalcount" runat="server"></asp:Label>

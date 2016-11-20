@@ -55,19 +55,6 @@ namespace ProjectTI.Views
                 MessageBox("Salvare nereusita!");
             }
 
-
-                
-            //cmd.ExecuteNonQuery();
-            //string confirmValue = Request.Form["confirm_value"];
-            //if (confirmValue == "Yes")
-            //{
-            //    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('You clicked YES!')", true);
-            //}
-            //else
-            //{
-            //    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('You clicked NO!')", true);
-            //}
-
         }
         public void ClearTextBoxes()
         {
@@ -75,14 +62,6 @@ namespace ProjectTI.Views
             prenume.Text = string.Empty;
             functie.Text = string.Empty;
             salarN.Text = string.Empty;
-            //salarR.Text = string.Empty;
-            //vechime.Text = string.Empty;
-            //spor.Text = string.Empty;
-            //premii.Text = string.Empty;
-            //compensatie.Text = string.Empty;
-            //avans.Text = string.Empty;
-            //retineri.Text = string.Empty;
-
         }
     }
 }
