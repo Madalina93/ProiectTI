@@ -15,15 +15,11 @@
     <br />--%>
         <%--<asp:Button runat="server" Style="margin-top:20px" OnClick="BtnArata_Click" Text="Arata" Width="112px" />--%>
    
-    <asp:Button ID="ButtonPdf" runat="server" Text="pdf" OnClick="ButtonPdf_Click" />
+   <%-- <asp:Button ID="ButtonPdf" runat="server" Text="pdf" OnClick="ButtonPdf_Click" CssClas="pdfButton"/>--%>
 
-    <br />
-    <br />
-
-    <br />
     <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="9pt" 
         WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt"
-        Width="116%"  Height="683px" style="margin-right: 0px" PageFormat="a3">
+        Width="95%"  Height="683px" style="margin-right: 0px" PageFormat="a3" ShowZoomControl="False"   >
 
         <LocalReport ReportPath="StatDePlata.rdlc">
             <DataSources>

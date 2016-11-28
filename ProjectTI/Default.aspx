@@ -1,42 +1,39 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ProjectTI._Default" %>
 
+<%--<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h3>Bine ati venit!</h3>
+</asp:Content>--%>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
+    <p>Aplicatia pune la dispozitie urmatoarele functionalitati:</p>
+    <p>
+        In meniul "Introducere date" se pot adauga angajati si de asemenea se pot vizualiza intregii angajati, avand posibilitatea de a face cateva editari.
+        <asp:LinkButton ID="LinkButtonAdaugare" runat="server" OnClick="LinkButtonAdaugare_Click">Adaugare</asp:LinkButton>
+        permine adaugarea in baza de date a unui angajat nou. Salvarea acestuia se efectueaza in momentul apasarii butonului "Adauga angajat".
+"Actualizare Date" permite vizualizarea sub forma tabelara a tuturor angajatilor.
+    </p>
+    <p>
+        Se apasa butonul
+        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Afiseaza toti angajatii</asp:LinkButton>
+        pentru o afisare tabelara. In partea dreapta a tabelului se gaseste coloana "Optiuni" ce permine, pe rand, Editarea unui angajat, Salvarea editarii sau anularea acesteia  cat si Stergerea angajatului.
+    </p>
+    <br />
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
-        </div>
-    </div>
 
+    <p>
+        Se poate cauta un angajat dupa nume, prenume sau chiar si dupa nume si dupa prenume. Se introduce numele angajatului dorit si se apasa butonul "Cauta angajatul".
+     De asemenea se poate realiza o marire pentru toti anagajatii firmei. Se introduce suma in campul respectiv si se apasa butonul "Aplica". Toti angajatii vor beneficia de suma introdusa.
+    </p>
+    <br />
+    <p>
+        Rapoarte sunt de doua categorii:
+        -> Stat de plat, ce afiseaza tabelar totii angajatii firmei
+        ->Fluturasi, ce afiseaza toti angajatii si permite cautarea dupa nume a unui anumit angajat
+        Cele doua tipuri de rapoarte pot fi scoase la imprimanta cat si salvate in format pdf.
+    </p>
+    <br />
+    <p>
+        Meniul procente stocheaza date referitoare la CAS, Sanatate..., tabela prevazuta cu o parola.
+        Se permite modificarea acestor date insa este necesara introducerea parolei pentru a avea acces la tabela. 
+    </p>
 </asp:Content>

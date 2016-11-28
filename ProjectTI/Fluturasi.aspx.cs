@@ -15,8 +15,30 @@ namespace ProjectTI.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //  DataSetFluturasi
+            CustomizeExcelNotVisible();
+            CustomizeWordNotVisible();
         }
+        protected void CustomizeExcelNotVisible()
+        {
+            string exportOption = "ExcelOpenXml";
+            RenderingExtension extension = ReportViewer1.LocalReport.ListRenderingExtensions().ToList().Find(x => x.Name.Equals(exportOption, StringComparison.CurrentCultureIgnoreCase));
+            if (extension != null)
+            {
+                System.Reflection.FieldInfo fieldInfo = extension.GetType().GetField("m_isVisible", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+                fieldInfo.SetValue(extension, false);
+            }
+        }
+        protected void CustomizeWordNotVisible()
+        {
+            string exportOption = "WordOpenXml";
+            RenderingExtension extension = ReportViewer1.LocalReport.ListRenderingExtensions().ToList().Find(x => x.Name.Equals(exportOption, StringComparison.CurrentCultureIgnoreCase));
+            if (extension != null)
+            {
+                System.Reflection.FieldInfo fieldInfo = extension.GetType().GetField("m_isVisible", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+                fieldInfo.SetValue(extension, false);
+            }
+        }
+
 
         public void MessageBox(String Message)
         {

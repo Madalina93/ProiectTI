@@ -13,5 +13,14 @@ namespace ProjectTI
         {
 
         }
+        protected void LinkButtonAdaugare_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Adaugare.aspx");
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ActualizareDate.aspx");
+        }
     }
 }

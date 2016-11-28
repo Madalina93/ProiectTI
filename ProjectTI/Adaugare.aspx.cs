@@ -39,7 +39,7 @@ namespace ProjectTI.Views
             cmd.Parameters.AddWithValue("@SalarRealizat", salarR.Text);
             cmd.Parameters.AddWithValue("@Vechime", vechime.Text);
             cmd.Parameters.AddWithValue("@Spor", spor.Text);
-            cmd.Parameters.AddWithValue("@PremiiBrute", premii.Text);
+            cmd.Parameters.AddWithValue("@PremiiBrute", spor.Text);
             cmd.Parameters.AddWithValue("@Compensatie", compensatie.Text);
             cmd.Parameters.AddWithValue("@Avans", avans.Text);
             cmd.Parameters.AddWithValue("@Retineri", retineri.Text);
@@ -62,6 +62,12 @@ namespace ProjectTI.Views
             prenume.Text = string.Empty;
             functie.Text = string.Empty;
             salarN.Text = string.Empty;
+            salarR.Text = "100";
+            vechime.Text = "0";
+            spor.Text = "0";
+            compensatie.Text = "0";
+            avans.Text = "0";
+            retineri.Text = "0";
         }
     }
 }

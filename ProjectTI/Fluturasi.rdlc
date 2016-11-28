@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>9.99501in</Width>
+              <Width>7.90334in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1193,7 +1193,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</Value>
+                                  <Value>--------------------------------------------------------------------------------------------------------------------------------------------------------</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1203,7 +1203,7 @@
                           <rd:DefaultName>Textbox57</rd:DefaultName>
                           <Top>4.64722in</Top>
                           <Height>0.25in</Height>
-                          <Width>9.83334in</Width>
+                          <Width>7.69501in</Width>
                           <ZIndex>39</ZIndex>
                           <Style>
                             <Border>
@@ -1223,7 +1223,6 @@
                         </Border>
                       </Style>
                     </Rectangle>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -1246,7 +1245,7 @@
         <Top>0.07222in</Top>
         <Left>0.12249in</Left>
         <Height>5.06389in</Height>
-        <Width>9.99501in</Width>
+        <Width>7.90334in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1257,8 +1256,10 @@
     <Height>7.8in</Height>
     <Style />
   </Body>
-  <Width>16.78334in</Width>
+  <Width>8.25834in</Width>
   <Page>
+    <PageHeight>8.5in</PageHeight>
+    <PageWidth>11in</PageWidth>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>

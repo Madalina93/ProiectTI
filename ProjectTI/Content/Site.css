@@ -9,6 +9,8 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    height: 55px;
+    width: 1440px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 

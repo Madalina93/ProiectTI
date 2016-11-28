@@ -57,10 +57,7 @@ namespace ProjectTI.Views
                     query += " OR Nume = '" + searchParts[1] + "' OR Prenume = '" + searchParts[1] + "'";
 
                 }
-                else
-                    MessageBox("Angajatul nu a fost gasit!");
-
-                TextBox1.Text = string.Empty;
+          
                 SqlCommand cmd = new SqlCommand(query, con);
                 try
                 {
@@ -70,16 +67,25 @@ namespace ProjectTI.Views
                     DataTable dt = new DataTable();
                     
                     sda.Fill(dt);
-                    afiseazaTotiAng.DataSource = dt;
-                    afiseazaTotiAng.DataBind();
-                    con.Close();
-                    con.Dispose();
-                }
 
-                    
+                    if (dt.Rows.Count != 0)
+                    {
+                        afiseazaTotiAng.DataSource = dt;
+                        afiseazaTotiAng.DataBind();
+                    }
+                    else
+                    {
+                        MessageBox("Nu a fost gasit nici un rezultat pentru: " + TextBox1.Text);
+                    }
+                    con.Close();
+                    con.Dispose();                   
+                }                
                 catch (Exception ex)
                 {
+                    TextBox1.Text = string.Empty;
                 }
+
+                TextBox1.Text = string.Empty;
             }
         }
 

@@ -14,7 +14,7 @@
     <br />
     <br />
     
-    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="1162px" Height="728px">
+    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="800px" Height="656px">
 
         <LocalReport ReportPath="Fluturasi.rdlc">
             <DataSources>

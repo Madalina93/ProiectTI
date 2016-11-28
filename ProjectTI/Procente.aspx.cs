@@ -80,8 +80,24 @@ namespace ProjectTI
                 var queryString = String.Format("UPDATE Procente SET CAS={0}, Sanat={1}, Somaj={2}, Impozit={3}, Parola='{4}' WHERE ProcenteID=1",
                     cas.Text, sanatate.Text, somaj.Text, impozit.Text, Security.HashSHA1(parola.Text));
                 SqlCommand com = new SqlCommand(queryString, con);
-                com.ExecuteNonQuery();
+                int n = com.ExecuteNonQuery();
+                if (parola.Text == "")
+                {
+                    MessageBox("Campul Parola nu poate fi gol!");
+                }
+                 
+
+                else if (n > 0)
+                {
+                    MessageBox("Salvare reusita!");
+                    
+                }
+                else
+                {
+                    MessageBox("Salvare nereusita!");
+                }
             }
+
             catch (Exception ex)
             { }
         }
@@ -106,6 +122,7 @@ namespace ProjectTI
         {
             if (string.Compare(hashedPassword, Security.HashSHA1(TxtPass.Text)) == 0)
             {
+                MessageBox("Parola corecta!");
                 DataTable dt = this.GetData();
 
                 cas.Text = dt.Rows[0]["CAS"].ToString();
@@ -114,7 +131,7 @@ namespace ProjectTI
                 impozit.Text = dt.Rows[0]["Impozit"].ToString();
                 parola.Text = dt.Rows[0]["Parola"].ToString();
 
-                MessageBox("Parola corecta!");
+               
                 TableProcente.Visible = true;
                 SalveazaP.Visible = true;
                 RenuntaP.Visible = true;

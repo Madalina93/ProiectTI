@@ -44,6 +44,8 @@
             </Scripts>
 
         </asp:ScriptManager>
+
+            <h4 style="color: forestgreen; font-weight: bold;">PROIECT ASP.NET APLICATIE SALARIZARE - SUTOI MADALINA-BIANCA </h4>
         <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <asp:Timer ID="Timer1" runat="server" Interval="1000">
@@ -52,34 +54,25 @@
             </ContentTemplate>
         </asp:UpdatePanel>--%>
          <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style4 {
-            height: 65px;
-        }
-        .auto-style5 {
-            height: 68px;
-        }
+             .auto-style1 {
+            width: 72%;
+                 margin-right: 0px;
+             }
         .auto-style6 {
             height: 172px;
             width: 227px;
         }
         .auto-style8 {
             height: 272px;
-            width: 736px;
+            width: 683px;
         }
-        .auto-style9 {
-            height: 272px;
-        }
-    </style>
+        </style>
 
         <div class="container">
 
-            <h4 style="color: forestgreen; font-weight: bold;">PROIECT ASP.NET APLICATIE SALARIZARE - SUTOI MADALINA-BIANCA </h4>
             <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                 <ContentTemplate>
-                    <asp:Timer ID="Timer2" runat="server" Interval="1000">
+                    <asp:Timer ID="Timer2" runat="server" Interval="1300">
                     </asp:Timer>
                     <asp:Label ID="lblcurrenttime" runat="server" Text=""></asp:Label>
                 </ContentTemplate>
@@ -125,7 +118,7 @@
                     </asp:UpdatePanel>
                        </td>
 
-                   <td class="auto-style6" style="background-color:transparent; color: #FFFFFF">
+                  <%-- <td class="auto-style6" style="background-color:transparent; color: #FFFFFF">
                     <asp:UpdatePanel ID="UpdatePanel4" runat="server">
                         <ContentTemplate>
 <br />
@@ -135,7 +128,7 @@
 <br />
                         </ContentTemplate>
                     </asp:UpdatePanel>
-                       </td>
+                       </td>--%>
 
                   </table>
 
@@ -195,7 +188,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/Ajutor.aspx">Ajutor</a></li>
                         <li class="dropdown nav "><a runat="server" class="dropdown-toggle" data-toggle="dropdown">Indroducere date<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="ActualizareDate.aspx">Actualizare Date</a></li>
@@ -215,15 +208,15 @@
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a runat="server" href="~/Account/Register">Inregistreaza-te</a></li>
+                                <li><a runat="server" href="~/Account/Login">Autentificare</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Buna, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Deconectare" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>
                         </LoggedInTemplate>
@@ -234,10 +227,7 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-            </footer>
-        </div>
+                    </div>
     </form>
 
 

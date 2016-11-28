@@ -84,7 +84,7 @@ namespace ProjectTI
 
             SetImageUrl();
             SetImageUrl2();
-            SetImageUrl3();
+          //  SetImageUrl3();
           
         }
 
@@ -104,13 +104,13 @@ namespace ProjectTI
 
         }
 
-        private void SetImageUrl3()
-        {
-            Random _rand = new Random();
-            int i = _rand.Next(4, 6);
-            Image1.ImageUrl = "~/Images/" + i.ToString() + ".jpg";
+        //private void SetImageUrl3()
+        //{
+        //    Random _rand = new Random();
+        //    int i = _rand.Next(4, 6);
+        //    Image1.ImageUrl = "~/Images/" + i.ToString() + ".jpg";
 
-        }
+        //}
 
         protected void Timer3_Tick(object sender, EventArgs e)
         {
